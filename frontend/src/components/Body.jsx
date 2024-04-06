@@ -1,10 +1,8 @@
-import React from 'react'
-import meet from '../images/meet.jpeg'
-import { IoIosAddCircleOutline } from "react-icons/io";
-import { FaRegKeyboard } from "react-icons/fa6";
-import { MdOutlineVideoCall } from "react-icons/md";
+import React, { useState } from 'react'
+
 
 const body = () => {
+
   return (
     <div className='w-full h-screen flex justify-center items-center bg-slate-700'>
         <div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
@@ -25,8 +23,10 @@ const body = () => {
                 <div className="relative w-[200px]">
                     <input
                     type="text"
+                    value={meetId}
                     placeholder="Enter meeting code"
                     className="w-full h-full bg-white text-[hsl(180,1%,26%)] rounded-md pl-10 pr-3 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    onChange={(e) => setMeetId(e.target.value)}
                     />
                     <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                     <FaRegKeyboard className="text-[hsl(180,1%,26%)]" />
